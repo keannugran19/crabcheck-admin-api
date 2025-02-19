@@ -1,0 +1,10 @@
+@import 'tailwindcss';
+
+body {
+  background-color: #fdf6f1;
+}
+
+@theme {
+  --font-*: initial;
+  --font-sans: 'Poppins', serif;
+}
