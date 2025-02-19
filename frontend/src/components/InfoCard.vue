@@ -1,20 +1,33 @@
+<script setup>
+import { ref } from 'vue'
+
+// add variable to store background image path
+defineProps({
+  image: String,
+})
+
+let randomNumber = Math.floor(Math.random() * 100)
+// make count dynamic to receive data from backend
+let count = ref(randomNumber)
+</script>
+
 <template>
   <!-- Info Card -->
   <div
-    class="relative bg-gray-200 rounded-b-lg border-t-4 border-gray-500 overflow-hidden h-30 flex items-center justify-center"
-    style="
-      background-image: url('your-image.jpg');
-      background-size: cover;
-      background-position: center;
-    "
+    class="relative bg-gray-200 rounded-b-lg overflow-hidden h-30 flex items-center justify-center"
   >
     <!-- Dark Overlay -->
-    <div class="absolute inset-0 bg-black opacity-60"></div>
+    <img
+      v-if="image"
+      :src="image"
+      alt="card-image"
+      class="absolute brightness-50 bg-cover bg-center"
+    />
 
     <!-- Centered Content -->
-    <div class="relative text-white text-center">
-      <p class="text-lg font-semibold">Total</p>
-      <p class="text-2xl font-bold">20</p>
+    <div class="relative text-center">
+      <p class="font-medium"><slot /></p>
+      <p class="text-3xl font-semibold">{{ count }}</p>
     </div>
   </div>
 </template>
