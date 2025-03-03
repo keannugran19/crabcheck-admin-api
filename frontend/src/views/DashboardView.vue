@@ -82,10 +82,12 @@ function makeActive(cardTitle) {
           >Metopograpsus Spp</InfoCard
         >
       </div>
-      <div class="h-100 col-span-3 bg-gray-100 rounded-lg shadow-lg p-4">
+      <div class="h-105 col-span-3 bg-gray-100 rounded-lg shadow-lg py-6 px-3">
+        <p class="flex justify-center font-medium">Total Crabs per Month</p>
         <BarGraph />
       </div>
-      <div class="h-100 col-span-2 bg-gray-100 rounded-lg shadow-md p-4">
+      <div class="h-105 col-span-2 bg-gray-100 rounded-lg shadow-md p-4">
+        <p class="flex justify-center font-medium">Crab Species Distribution</p>
         <PieChart />
       </div>
     </section>
